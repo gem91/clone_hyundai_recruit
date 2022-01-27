@@ -1,0 +1,353 @@
+@charset "UTF-8";
+/* 웹폰트 CSS */
+@font-face {
+  font-family: "HyundaiSansHeadKRRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/HyundaiSansHeadKRRegular.eot");
+  src: url("../fonts/HyundaiSansHeadKRRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/HyundaiSansHeadKRRegular.woff") format("woff");
+}
+@font-face {
+  font-family: "HyundaiSansHeadKRMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/HyundaiSansHeadKRMedium.eot");
+  src: url("../fonts/HyundaiSansHeadKRMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/HyundaiSansHeadKRMedium.woff") format("woff");
+}
+@font-face {
+  font-family: "HyundaiSansTextKRRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/HyundaiSansTextKRRegular.eot");
+  src: url("../fonts/HyundaiSansTextKRRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/HyundaiSansTextKRRegular.woff") format("woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: "HyundaiSansTextKRRegular", "맑은 고딕", Sans-serif;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1280px;
+}
+
+/*header*/
+header {
+  border-bottom: 1px solid #ddd;
+}
+header .header_top {
+  margin: 0 auto;
+  width: 1280px;
+  padding: 10px 0;
+}
+header .header_top .util-menu {
+  display: flex;
+  justify-content: right;
+}
+header .header_top .util-menu li {
+  position: relative;
+  margin-left: 10px;
+}
+header .header_top .util-menu li::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  display: block;
+  width: 1px;
+  height: 45%;
+  background-color: #ddd;
+}
+header .header_top .util-menu li:first-child::before {
+  display: none;
+}
+header .header_top .util-menu li a {
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.8rem;
+}
+header .header_top .util-menu li a:hover {
+  color: #888;
+}
+header .header_bottom {
+  margin: 0 auto;
+  width: 1280px;
+  display: flex;
+}
+header .header_bottom .logo {
+  height: 80px;
+  width: 230px;
+}
+header .header_bottom .logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px;
+  background: url(/assets/images/icons/logo.png) no-repeat center center;
+}
+header .header_bottom .gnb {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 100px;
+  width: 100%;
+  background-color: white;
+}
+header .header_bottom .gnb li > a {
+  display: block;
+  padding: 10px 20px;
+  font-family: "HyundaiSansHeadKRRegular";
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.2s ease-in-out;
+}
+header .header_bottom .gnb li > a:hover {
+  color: #00AAD2;
+}
+header .header_bottom .gnb li .depth li a {
+  display: block;
+  padding: 3px 0;
+  font-size: 1rem;
+}
+
+/*contents*/
+.contents_wrap .visual_cont {
+  width: 100%;
+  height: 100%;
+}
+.contents_wrap .visual_cont .container {
+  padding: 30px 60px 80px;
+  background-color: #ece9e6;
+  box-sizing: content-box;
+}
+.contents_wrap .visual_cont .container .visual_box {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 1280px;
+  padding: 0;
+}
+.contents_wrap .visual_cont .container .visual_box li {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contents_wrap .visual_cont .container .visual_box li img {
+  width: 50%;
+}
+.contents_wrap .recruit_cont .notice_area {
+  position: relative;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.contents_wrap .recruit_cont .notice_area > .container {
+  display: flex;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box {
+  display: flex;
+  width: 50%;
+  padding: 30px 0;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box h2 {
+  width: 115px;
+  margin-right: 30px;
+  font-size: 1.5rem;
+  font-family: "HyundaiSansHeadKRRegular";
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box.recruit {
+  border-right: 1px solid #ddd;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box.recruit p {
+  display: flex;
+  align-items: center;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box.notice h2 {
+  margin-left: 50px;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box.notice ul {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  height: 27px;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box.notice ul li {
+  width: 100%;
+  line-height: 1.7;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box.notice ul li a {
+  color: #333;
+  font-size: 1rem;
+}
+.contents_wrap .recruit_cont .notice_area > .container .notice_box.notice ul li a:hover {
+  color: #888;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content {
+  position: absolute;
+  display: block;
+  top: 88px;
+  left: 0;
+  padding: 60px 0;
+  width: 100%;
+  background-color: #ece9e6;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_lists {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 700px;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_lists li {
+  position: relative;
+  width: 25%;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_lists li::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  width: 1px;
+  height: 30%;
+  background-color: #a9a9a9;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_lists li:last-child:before {
+  display: none;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_lists li span {
+  display: block;
+  text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: -0.7px;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_lists li a {
+  margin-top: 10px;
+  color: #000;
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "HyundaiSansHeadKRRegular";
+  transition: color 0.18s ease-in-out;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_lists li a:hover {
+  color: #00AAD2;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_ing {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_ing li {
+  width: 24%;
+  height: 350px;
+  background-color: #fff;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .recruit_ing li a {
+  display: block;
+}
+.contents_wrap .recruit_cont .notice_area > .container .recruit_content .btn_primary {
+  display: block;
+  margin: 50px auto 0;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #003469;
+}
+.contents_wrap .jobs_cont {
+  margin-top: 660px;
+  padding: 100px 0 0;
+  position: relative;
+}
+.contents_wrap .jobs_cont h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: "HyundaiSansHeadKRRegular";
+}
+.contents_wrap .jobs_cont p {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.contents_wrap .jobs_cont .jobs_area {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  height: 500px;
+}
+.contents_wrap .jobs_cont .jobs_area li {
+  padding: 0 20px;
+  width: 20%;
+  height: 500px;
+  border-right: 1px solid #ddd;
+}
+.contents_wrap .jobs_cont .jobs_area li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.contents_wrap .jobs_cont .jobs_area li a:hover .text {
+  color: #00AAD2;
+}
+.contents_wrap .jobs_cont .jobs_area li a .thumb {
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  width: 340px;
+  height: 200px;
+}
+.contents_wrap .jobs_cont .jobs_area li a .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contents_wrap .jobs_cont .jobs_area li a .text {
+  color: #000;
+  margin-top: 60px;
+  transition: color 0.18s ease-in-out;
+}
+.contents_wrap .jobs_cont .jobs_area li a .text strong {
+  text-align: left;
+  display: block;
+  font-size: 1.2rem;
+  font-family: "HyundaiSansHeadKRRegular";
+}
+.contents_wrap .jobs_cont .jobs_area li a .text span {
+  margin-top: 20px;
+  display: block;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.4;
+}
+
+footer {
+  height: 300px;
+  background-color: #333;
+}
+
+/*# sourceMappingURL=style.css.map */
