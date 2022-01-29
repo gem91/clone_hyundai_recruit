@@ -13,45 +13,57 @@
     <div class="wrap">
         <header id="header">
             <div class="header_top">
-                <ul class="util-menu">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li><a href="#">Eng</a></li>
-                </ul>
+                <div class="container">
+                    <ul class="util-menu">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">Eng</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="header_bottom">
-                <h1 class="logo"><a href="http://recruit.hyundai.com/hfront/main.do">HYUNDAI LOGO</a></h1>
-                <ul class="gnb">
-                    <li><a href="#">About Hyundai</a>
-                        <div class="gnb_sub_wrap" style="display: none;">
-                            <div class="gnb_sub_inner">
-                                <div class="gnb_sub_depth01">
-                                    <ul class="depth">
-                                        <li><a href="#">Vision</a></li>
-                                        <li><a href="#">What makes you move?</a></li>
-                                        <li><a href="#">Global Map</a></li>
-                                        <li><a href="#">News</a></li>
-                                    </ul>
+                <div class="container">
+                    <h1 class="logo"><a href="http://recruit.hyundai.com/hfront/main.do">HYUNDAI LOGO</a></h1>
+                    <ul class="gnb">
+                        <li><a href="#">About Hyundai</a>
+                            <div class="gnb_sub_wrap" style="display: none;">
+                                <div class="gnb_sub_inner">
+                                    <div class="gnb_sub_depth01">
+                                        <ul class="depth">
+                                            <li><a href="#">Vision</a></li>
+                                            <li><a href="#">What makes you move?</a></li>
+                                            <li><a href="#">Global Map</a></li>
+                                            <li><a href="#">News</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li><a href="#">Working at Hyundai</a></li>
-                    <li><a href="#">채용공고</a></li>
-                    <li><a href="#">채용정보</a></li>
-                    <li><a href="#">채용문의</a></li>
-                    <li><a href="#">이벤트</a></li>
-                </ul>
+                        </li>
+                        <li><a href="#">Working at Hyundai</a></li>
+                        <li><a href="#">채용공고</a></li>
+                        <li><a href="#">채용정보</a></li>
+                        <li><a href="#">채용문의</a></li>
+                        <li><a href="#">이벤트</a></li>
+                    </ul>
+                </div>
             </div>
+            <button class="hambuger">메뉴열기</button>
+            <nav class="m_gnb" style="display: none;">
+            
+            </nav>
         </header>
+       
         <div class="contents_wrap">
             <!--main-sliders-->
             <section class="visual_cont">
-                <div class="container">
+                <div class="visaul_inner">
                     <ul class="visual_box">
                         <li>
-                            <img src="/assets/images/main_img_left.png" alt="현대자동차 인재채용 메인이미지 왼쪽">
-                            <img src="/assets/images/main_img_right.png" alt="현대자동차 인재채용 메인이미지 오른쪽">
+                            <div class="half_img"></div>
+                            <div class="half_img"></div>
+                            <div class="all_img">
+                                <img src="./assets/images/vis_small_img01.png" alt="">
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -65,81 +77,79 @@
                             <h2>채용공고</h2>
                             <p>현재 진행 중인 채용공고 입니다.</p>
                         </div>
-                        <div class="recruit_content">
-                            <div class="container">
-                                <ul class="recruit_lists">
-                                    <li>
-                                        <span>전체</span>
-                                        <a href="#" target="_blank">200</a>
-                                    </li>
-                                    <li>
-                                        <span>신입</span>
-                                        <a href="#" target="_blank">10</a>
-                                    </li>
-                                    <li>
-                                        <span>경력</span>
-                                        <a href="#" target="_blank">1</a>
-                                    </li>
-                                    <li>
-                                        <span>H-experience</span>
-                                        <a href="#" target="_blank">4</a>
-                                    </li>
-                                    <li>
-                                        <span>기타</span>
-                                        <a href="#" target="_blank">55</a>
-                                    </li>
-                                </ul>
-                                <div class="recruit_ing">
-                                    <div class="ing_list">
-                                        <a href="#" target="_blank">
-                                            <span class="tag">신입</span>
-                                            <p class="title">[전략지원] 인사 기획</p>
-                                            <span class="date">2023.01.18 - 02.06 <em>D-8</em></span>
-                                        </a>
-                                        <div class="sns_ui">
-                                            <i class="far fa-heart"><span class="hidden">좋아요</span></i>
-                                            <div class="sns">
-                                                <a class="icon_fb" href="http://recruit.hyundai.com/hfront/webapply/2022/11/31/applySnsView.do"><i class="fab fa-facebook-f"><span class="hidden">페이스북</span></i></a>
-                                                <a class="icon_insta" href="http://recruit.hyundai.com/hfront/webapply/applyView.do?recuYy=2022&recuType=11&recuCls=31"><i class="fab fa-instagram"><span class="hidden">인스타그램</span></i></a>
-                                            </div>
+                        <article class="recruit_content">
+                            <ul class="recruit_lists">
+                                <li>
+                                    <span>전체</span>
+                                    <a href="#" target="_blank">200</a>
+                                </li>
+                                <li>
+                                    <span>신입</span>
+                                    <a href="#" target="_blank">10</a>
+                                </li>
+                                <li>
+                                    <span>경력</span>
+                                    <a href="#" target="_blank">1</a>
+                                </li>
+                                <li>
+                                    <span>H-experience</span>
+                                    <a href="#" target="_blank">4</a>
+                                </li>
+                                <li>
+                                    <span>기타</span>
+                                    <a href="#" target="_blank">55</a>
+                                </li>
+                            </ul>
+                            <div class="recruit_ing">
+                                <div class="ing_list">
+                                    <a href="#" target="_blank">
+                                        <span class="tag">신입</span>
+                                        <p class="title">[전략지원] 인사 기획</p>
+                                        <span class="date">2023.01.18 - 02.06 <em>D-8</em></span>
+                                    </a>
+                                    <div class="sns_ui">
+                                        <i class="far fa-heart"><span class="hidden">좋아요</span></i>
+                                        <div class="sns">
+                                            <a class="icon_fb" href="http://recruit.hyundai.com/hfront/webapply/2022/11/31/applySnsView.do"><i class="fab fa-facebook-f"><span class="hidden">페이스북</span></i></a>
+                                            <a class="icon_insta" href="http://recruit.hyundai.com/hfront/webapply/applyView.do?recuYy=2022&recuType=11&recuCls=31"><i class="fab fa-instagram"><span class="hidden">인스타그램</span></i></a>
                                         </div>
-                                    </div>
-                                    <div class="ing_list">
-                                        <a href="#" target="_blank">
-                                            <span class="tag">경력</span>
-                                            <p class="title">[전략지원] 현대 모터스튜디오 스페이스 마케팅 (거점 전담 매니저)</p>
-                                            <span class="date">2022.01.28 ~ 04.30 <em>D-91</em></span>
-                                        </a>
-                                        <div class="sns_ui">
-                                            <i class="far fa-heart"><span class="hidden">좋아요</span></i>
-                                            <div class="sns">
-                                                <a class="icon_fb" href="http://recruit.hyundai.com/hfront/webapply/2022/11/31/applySnsView.do"><i class="fab fa-facebook-f"><span class="hidden">페이스북</span></i></a>
-                                                <a class="icon_insta" href="http://recruit.hyundai.com/hfront/webapply/applyView.do?recuYy=2022&recuType=11&recuCls=31"><i class="fab fa-instagram"><span class="hidden">인스타그램</span></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ing_list small">
-                                        <a href="#" target="_blank">
-                                            <span class="tag">신입</span>
-                                            <p class="title">[IT] 경영지원부문 빅데이터 분석 (데이터사이언티스트)</p>
-                                            <span class="date">2022.01.10 ~ 12.31 <em>D-336</em></span>
-                                        </a>
-                                        <a href="#" target="_blank">
-                                            <span class="tag">경력</span>
-                                            <p class="title">[전략지원] People Analytics (HR 데이터 분석)</p>
-                                            <span class="date">2022.01.18 ~ 02.06 <em>D-8</em></span>
-                                        </a>
-                                    </div>
-                                    <div class="ing_list other">
-                                        <a href="#" target="_blank">
-                                            <p class="title">내 지원서 상시 등록</p>
-                                            <span class="desc">현대자동차와 함께 하는<br>길은 언제나 열려 있습니다.</span>
-                                        </a>
                                     </div>
                                 </div>
-                                <button class="btn_primary" type="button">전체 채용공고</button>
+                                <div class="ing_list">
+                                    <a href="#" target="_blank">
+                                        <span class="tag">경력</span>
+                                        <p class="title">[전략지원] 현대 모터스튜디오 스페이스 마케팅 (거점 전담 매니저)</p>
+                                        <span class="date">2022.01.28 ~ 04.30 <em>D-91</em></span>
+                                    </a>
+                                    <div class="sns_ui">
+                                        <i class="far fa-heart"><span class="hidden">좋아요</span></i>
+                                        <div class="sns">
+                                            <a class="icon_fb" href="http://recruit.hyundai.com/hfront/webapply/2022/11/31/applySnsView.do"><i class="fab fa-facebook-f"><span class="hidden">페이스북</span></i></a>
+                                            <a class="icon_insta" href="http://recruit.hyundai.com/hfront/webapply/applyView.do?recuYy=2022&recuType=11&recuCls=31"><i class="fab fa-instagram"><span class="hidden">인스타그램</span></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ing_list small">
+                                    <a href="#" target="_blank">
+                                        <span class="tag">신입</span>
+                                        <p class="title">[IT] 경영지원부문 빅데이터 분석 (데이터사이언티스트)</p>
+                                        <span class="date">2022.01.10 ~ 12.31 <em>D-336</em></span>
+                                    </a>
+                                    <a href="#" target="_blank">
+                                        <span class="tag">경력</span>
+                                        <p class="title">[전략지원] People Analytics (HR 데이터 분석)</p>
+                                        <span class="date">2022.01.18 ~ 02.06 <em>D-8</em></span>
+                                    </a>
+                                </div>
+                                <div class="ing_list other">
+                                    <a href="#" target="_blank">
+                                        <p class="title">내 지원서 상시 등록</p>
+                                        <span class="desc">현대자동차와 함께 하는<br>길은 언제나 열려 있습니다.</span>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                            <button class="btn_primary" type="button">전체 채용공고</button>
+                        </article>
                         <div class="notice_box notice">
                             <h2>공지사항</h2>
                             <ul>
@@ -152,7 +162,7 @@
                 </div>
             </section>
 
-            <section class="jobs_cont">
+            <section class="jobs_cont" style="display: none;">
                 <h2>직무소개</h2>
                 <p>현대자동차 안의 다양한 직무를 소개합니다.</p>
                 <div></div>
@@ -220,7 +230,7 @@
                 </article>
             </section>
         </div>
-        <footer>
+        <footer style="display: none;">
             <div class="container">
                 <div class="footer_logo">Footer Logo</div>
                 <div class="footer_top">
