@@ -3,197 +3,16 @@
 @import "./variables.scss";
 @import "./mixin.scss";
 
-
+/*commons*/
+.hidden{font-size: 0;display: block;text-indent: -9999px;}
 .container{margin: 0 auto; width: $pcWidth;}
 @include desktop {.container{width: 100%;}}
 @include tablet {.container{width: 100%;}}
 @include mobile {.container{width: 100%;}}
 
-.hidden{font-size: 0;display: block;text-indent: -9999px;}
 
 /*header*/
-header{
-    border-bottom: 1px solid #ddd;
-    .header_top{
-        margin: 0 auto;
-        padding: 10px 0;
-        .util-menu{
-            padding: 0 2%;
-            display: flex;
-            justify-content: right;
-            li{
-                position: relative;
-                margin-left: 10px;
-                &::before{
-                    content: '';
-                    position: absolute;
-                    top: 12px;
-                    left: -5px;
-                    display: block;
-                    width: 1px;
-                    height: 45%;
-                    background-color: #ddd;
-                    
-                }
-                &:first-child::before{
-                    display: none;
-                }
-                a{
-                    display: block;
-                    padding: 10px 10px;
-                    text-decoration: none;
-                    color: $mainColor;
-                    font-size: 0.8rem;
-                    &:hover{
-                        color: $hover-gray;
-                    }
-                }
-            }
-        }
-    }
-    .header_bottom{
-        margin: 0 auto;
-        padding-bottom: 15px;
-       
-        .container{
-            display: flex;
-            .logo{
-                margin-left: 20px;
-                min-width: 230px;
-                a{
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    text-indent: -9999px;
-                    background: url(/assets/images/icons/logo.png) no-repeat center center;
-                }
-            }
-            .gnb{
-                display: flex;
-                justify-content:space-between;
-                align-items: center;
-                padding: 0 100px;
-                width: 100%;
-                background-color: white;
-                li{
-                    > a{
-                        display: block;
-                        padding: 10px 20px;
-                        font-family: 'HyundaiSansHeadKRRegular';
-                        font-size: 1.2rem;
-                        color: $mainColor;
-                        transition: color .2s ease-in-out;
-                        &:hover{
-                            color: $pointColor;
-                        }
-                    }
-                    .depth{
-                        li{
-                            a{
-                                display: block;
-                                padding: 3px 0;
-                                font-size: 1rem;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-   .hambuger{display: none;}
-}
-
-@include desktop {
-    /*header*/
-    header{
-        .header_bottom{
-            .container {
-                .gnb{
-                    padding: 0 4%;
-                    li{
-                        a{
-                            padding: 10px 10px;
-                            font-size: 1.1rem;
-                        }
-                    }
-                }
-            }
-                
-        }
-    }
-}
-
-
-@include tablet {
-    header{
-        .header_bottom{
-            .container{
-                .logo{
-                    margin-left: 15px;
-                    min-width: 100px;
-                    height: 45px;
-                    a{
-                        background: url(/assets/images/icons/m_logo.png) no-repeat center center;
-                        transform: scale(.8);
-                    }
-                }
-                .gnb{
-                    padding: 0 25px 0 0;
-                    li{
-                        a{
-                            padding: 10px 0px;
-                            font-size: 1rem;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@include mobile {
-    header{
-        .header_top{
-            display: none;
-        }
-        .header_bottom{
-            padding: 10px 0;
-            .container{
-                .logo{
-                    margin-left: 15px;
-                    min-width: 100px;
-                    height: 45px;
-                    a{
-                        background: url(/assets/images/icons/m_logo.png) no-repeat center center;
-                        transform: scale(.8);
-                    }
-                }
-                .gnb{
-                    display: none;
-                }
-            }
-        }
-        .hambuger{
-            position: absolute;
-            top: 5px;
-            right: 20px;
-            display: block;
-            width:40px; height:40px;
-            text-indent: -9999px;
-            &:before{
-                content:''; 
-                position:absolute; top:14px; left:0; 
-                display:block; 
-                height:4px; width:35px; 
-                border-radius:4px;
-                box-shadow:0 9px #333, 0 19px #333;
-                -webkit-box-shadow:0 9px #333, 0 19px #333;
-                -moz-box-shadow:0 9px #333, 0 19px #333;
-                background:#333; 
-            }
-        }
-    }
-}
-
+@import "./header.scss";
 
 /*contents*/
 .contents_wrap{
@@ -232,7 +51,6 @@ header{
             }
         }
     }  
-
     @media (max-width: 1400px) {
         .visual_cont{
             .visaul_inner{
@@ -250,7 +68,6 @@ header{
       }
     @include desktop {
         .visual_cont{
-            border-bottom: 3px solid red;
             .visaul_inner{
                 width: 100%;
                 .visual_box{
@@ -285,7 +102,6 @@ header{
     }
     @include mobile {
         .visual_cont{
-            border-bottom: 10px solid red;
             .visaul_inner{
                 padding: 0;
                 width: 100%;
@@ -313,6 +129,7 @@ header{
             > .container{
               display: flex;
             .notice_box{
+                position: relative; 
                 display: flex;
                 width: 50%;
                 padding: 30px 0;
@@ -329,6 +146,15 @@ header{
                 p{
                     display: flex;
                     align-items: center;
+                }
+                .icon_arrow{
+                    height:40px; width:40px; display:block;
+                    position:absolute; top: 24px; right: 20px;
+                    &:before{
+                        position:absolute; top:8px; left:12px;
+                        content:''; height:16px; width:16px; display:block; 
+                        border:3px solid #333; border-right-width:0; border-top-width:0; transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg); 
+                    }
                 }
             }
             .notice_box.notice{
@@ -347,12 +173,25 @@ header{
                         }
                     }
                 }
+                .icon_plus{
+                    height:40px; width:40px; display:block; position:absolute;
+                    top: 22px; right: 20px;
+                    &:before, &:after{
+                        content:''; height:3px; width:20px; 
+                        position:absolute; top:17px; left:8px;
+                        display:block; background:#333; border-radius:10px;
+                    }
+                    &:after{height:20px; width:3px; top:8px; left:17px; 
+                    }
+                }
             }
             .recruit_content{
-                position: absolute;
                 display: block;
+                overflow: hidden;
+                position: absolute;
                 top: 88px;
                 left: 0;
+                padding: 50px 0 80px;
                 width: 100%;
                 background-color: #ece9e6;
                 .recruit_lists{
@@ -399,8 +238,7 @@ header{
                     }
                 }
                 .recruit_ing{
-                    margin: 0 auto;
-                    margin-top: 40px;
+                    margin: 40px auto 0;
                     width: $pcWidth;
                     .ing_list{
                         position: relative;
@@ -585,7 +423,8 @@ header{
                 }
             }
         }
-    } @include desktop {
+    } 
+    @include desktop {
         .recruit_cont{
             .notice_area{
                 > .container{
@@ -680,16 +519,14 @@ header{
     }
     @include mobile {
         .recruit_cont{
-            border-top:10px solid red;
-
             .notice_area{
                 > .container{
-                    flex-direction: column;
+                    flex-direction: column-reverse;
                     .notice_box{
                         width: 100%;
                         &.recruit{
                             border-right: 0;
-                            border-bottom: 1px solid #ddd
+                            border-top: 1px solid #ddd
                         }
                         h2{
                             margin-right: 0;
@@ -702,6 +539,8 @@ header{
                         &.notice{
                             ul{
                                 li{
+                                    width: 85%;
+                                    overflow: hidden; white-space: nowrap;  text-overflow: ellipsis;
                                     a{
                                         font-size: 0.9rem;
                                     }
@@ -712,10 +551,17 @@ header{
                     .recruit_content {
                         top: 170px;
                         .recruit_lists{
-
-                            width: 70%;
+                            width: 95%;
                             li{
+                                &:before{
+                                    bottom: 3px;
+                                }
                                 span{
+                                    display: flex;
+                                    align-items:center ;
+                                    justify-content: center;
+                                    height: 40px;
+                                    // border: 1px solid red;
                                     font-size: .9rem;
                                     line-height: 1;
                                 }
@@ -773,7 +619,7 @@ header{
     //jobs_contents
     .jobs_cont{
         position: relative;
-        margin-top: 660px;
+        margin-top: 700px;
         padding: 100px 0 0;
         h2{
             text-align: center;
@@ -790,14 +636,17 @@ header{
             .jobs_area{
                 overflow: hidden;
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
                 margin-top: 100px;
                 height: 500px;
                 li{
+                    display: inline-block;
                     padding: 0 20px;
                     width: 20%;
                     height: 500px;
                     border-right: 1px solid #ddd;
+                    background: #fff;
+                    transition: .5s ease-in-out;
                     a{
                         display: block;
                         width: 100%;
@@ -839,6 +688,7 @@ header{
                         }
                     }
                     &.on{
+                        min-width: auto;
                         width: 30%;
                         a{
                             .thumb{
@@ -885,7 +735,7 @@ header{
                         box-shadow: 5px 6px 8px 1px #00000070;
                     }
                     &:after{
-                         top:18px; left:20px;
+                        top:18px; left:20px;
                         transform:rotate(-45deg);
                     }
                 }
@@ -896,14 +746,66 @@ header{
                         box-shadow: -5px 6px 8px 1px #00000070;
                     }
                     &:after{
-                       top:19px; right:18px;
+                    top:19px; right:18px;
                         transform:rotate(130deg);
                     }
                 }
             }
-       }
+        }
+    }
+    @media(max-width: 1400px) {
+        .jobs_cont{
+            > article {
+                .jobs_area{
+                    li{
+                        width: 40%;
+                        &.on{
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include tablet {
+        .jobs_cont{
+            margin-top: 1325px;
+        }
+    }
+    @include mobile {
+        .jobs_cont{
+            margin-top: 1420px;
+            h2{
+                font-size: 1.8rem;
+            }
+            p{
+                margin-top: 12px;
+                font-size: .9rem;
+            }
+            > article {
+                .jobs_area{
+                    flex-wrap: wrap;
+                    margin-top: 50px;
+                    li{
+                        width: 100%;
+                        border-right: none;
+                        &.on{
+                            width: 100%;
+                            a .thumb{
+                                width: 100%;
+                            }
+                        }
+                        a .thumb{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
+
 
 footer{
     position: relative;
@@ -972,7 +874,6 @@ footer{
 }
 @include tablet {
     footer{
-        border-bottom: 10px solid red;
         .container{
             .footer_top{
                 ul{
@@ -1036,7 +937,3 @@ footer{
         }
     }
  }
-  
-  
- @include desktop {
-}
