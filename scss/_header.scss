@@ -62,8 +62,8 @@ header{
                 padding: 0 100px;
                 width: 100%;
                 background-color: white;
-                li{
-                    > a{
+                > li{
+                    a{
                         display: block;
                         padding: 10px 20px;
                         font-family: 'HyundaiSansHeadKRRegular';
@@ -73,14 +73,60 @@ header{
                         &:hover{
                             color: $pointColor;
                         }
+                        
                     }
-                    .depth{
-                        li{
-                            a{
-                                display: block;
-                                padding: 3px 0;
-                                font-size: 1rem;
+                    .gnb_sub_wrap{
+                        display: none;
+                        position: absolute;
+                        top: 109px;
+                        left: 0;
+                        padding: 15px 0 80px;
+                        width: 100%;
+                        opacity: 1;
+                        background: #fff;
+                        box-shadow: 0 15px 15px rgb(0, 0, 0, 0.08);
+                        transition: opacity .5s ease-in-out;
+                        .container{
+                            padding-left: 20%;
+                            .depth01{
+                                display: inline-block;
+                                margin-left: 15%;
+                                &:first-child{margin-left: 0;}
+                                > li{
+                                     a{
+                                        position: relative;
+                                        display: block;
+                                        padding: 10px 0 0 10px;
+                                        font-size: 0.9rem;
+                                        color: $mainColor;
+                                        letter-spacing: -0.5px;
+                                        &:before{
+                                            content: '-';
+                                            position: absolute;
+                                            top: 40%;
+                                            left: 0;
+                                        }
+                                        &:hover{
+                                            color: $pointColor;
+                                        }
+                                    }
+                                    &.sub_title a{
+                                        padding: 10px 0 0 0;
+                                        font-size: 1rem;
+                                        color: $pointBlue;
+                                        &:before{
+                                           display: none;
+                                        }
+                                    }
+                                }
                             }
+                        }
+                        
+                    }
+                    &:hover{
+                        .gnb_sub_wrap{
+                            display: block;
+                            opacity: 1;
                         }
                     }
                 }
