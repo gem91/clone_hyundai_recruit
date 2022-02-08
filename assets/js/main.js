@@ -22,31 +22,34 @@
 
 
 
-const body = document.getElementsByTagName("body")[0];
+/* number of recruits employee variation */
+const counters = document.querySelectorAll('.value');
+const arr = [...counters]
+const speed = 200;
 
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+num = arr.map( counter => {
+    return +counter.getAttribute('data-counter');
+})
+arr[0].setAttribute( 'data-counter', num[1] + num[2] + num[3] + num[4] );
+
+counters.forEach( counter => {
+    const animate = () => {
+        const value = +counter.getAttribute('data-counter');
+        const data = +counter.innerText;
+        const time = value / speed;
+        if(data < value) {
+            counter.innerText = Math.ceil(data + time);
+            setTimeout(animate, 1);
+        }else{
+            counter.innerText = value;
+        }
+    }
+   animate();
+});
+
 
 /* recruits Up & Down */
+const body = document.getElementsByTagName("body")[0];
 const recruitBox = document.querySelector(".notice_box.recruit")
 const btnArrow = recruitBox.querySelector(".arrow_isDown");
 const recruits = document.querySelector(".recruit_content");
@@ -114,19 +117,38 @@ for( let i = 0; i < heart.length; i ++){
 
 
 /* jobs slides */
-const btnLeft = document.querySelector(".arrow_left");
-const btnRight = document.querySelector(".arrow_right");
+const jobPrev = document.querySelector(".arrow_left");
+const jobNext = document.querySelector(".arrow_right");
 
 const jobs = document.querySelector(".jobs_area");
-const jobList = jobs.querySelectorAll(".jobs_area li");
+const jobList = jobs.querySelectorAll("li");
+const len = jobList.length; //6 
+let active = 0;
 
-for( list of jobList ){
-    list.addEventListener('click', e => {
-        e.currentTarget.classList.add("on")
-        e.currentTarget.previousElementSibling.classList.remove("on")
-        e.currentTarget.nextElementSibling.classList.remove("on")
-    })
-}
+
+jobPrev.addEventListener('click', (e) => {
+    ( active === 0 ) ? active = len-1 :  active -- ;
+       
+
+    
+
+    for( let list of jobList){
+        list.classList.remove("on");
+        jobs.style.left = ( -100 * active + 200  ) + "px"
+        console.log(jobs.style.left = ( -200 * active ) + "px");
+    }
+    jobList[active].classList.add("on");
+});
+
+jobNext.addEventListener('click', (e) => {
+    (active === len-1) ? active = 0 :  active ++;
+    
+    for( let list of jobList)  list.classList.remove("on");
+
+    jobs.style.left = (active * -200) + "px"
+    jobList[active].classList.add("on");
+});
+
 
 
 

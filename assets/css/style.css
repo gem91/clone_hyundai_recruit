@@ -377,6 +377,7 @@ header .hambuger {
 .contents_wrap .visual_cont .visaul_inner .visual_box {
   overflow: hidden;
   width: 1280px;
+  height: 580px;
   margin: 0 auto;
 }
 .contents_wrap .visual_cont .visaul_inner .visual_box li {
@@ -982,66 +983,72 @@ header .hambuger {
 .contents_wrap .jobs_cont > article {
   position: relative;
 }
-.contents_wrap .jobs_cont > article .jobs_area {
+.contents_wrap .jobs_cont > article .jobs_container {
+  position: relative;
   overflow: hidden;
-  display: flex;
-  flex-wrap: nowrap;
   margin-top: 100px;
   height: 500px;
 }
-.contents_wrap .jobs_cont > article .jobs_area li {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: all 0.5s ease-out;
+}
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li {
   display: inline-block;
   padding: 0 20px;
   width: 20%;
   height: 500px;
   border-right: 1px solid #ddd;
   background: #fff;
-  transition: all 0.5s ease-out;
+  transition: all 0.35s ease-out;
 }
-.contents_wrap .jobs_cont > article .jobs_area li a {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li a {
   display: block;
   width: 100%;
   height: 100%;
 }
-.contents_wrap .jobs_cont > article .jobs_area li a:hover .text {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li a:hover .text {
   color: #00AAD2;
 }
-.contents_wrap .jobs_cont > article .jobs_area li a .thumb {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li a .thumb {
   margin: 0 auto;
   overflow: hidden;
   display: block;
   width: 340px;
   height: 200px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
-.contents_wrap .jobs_cont > article .jobs_area li a .thumb img {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li a .thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.contents_wrap .jobs_cont > article .jobs_area li a .text {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li a .text {
   color: #000;
   margin-top: 60px;
   transition: color 0.3s ease-in-out;
 }
-.contents_wrap .jobs_cont > article .jobs_area li a .text strong {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li a .text strong {
   text-align: left;
   display: block;
   font-size: 1.2rem;
   font-family: "HyundaiSansHeadKRRegular";
 }
-.contents_wrap .jobs_cont > article .jobs_area li a .text span {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li a .text span {
   margin-top: 20px;
   display: block;
   font-size: 1rem;
   text-align: left;
   line-height: 1.4;
 }
-.contents_wrap .jobs_cont > article .jobs_area li.on {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li.on {
   min-width: auto;
   width: 30%;
 }
-.contents_wrap .jobs_cont > article .jobs_area li.on a .thumb {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li.on a .thumb {
   width: 530px;
   height: 300px;
 }
