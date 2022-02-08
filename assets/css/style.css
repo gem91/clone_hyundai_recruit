@@ -283,7 +283,7 @@ header .header_bottom .container .gnb > li .gnb_sub_wrap .container .depth01 > l
 header .header_bottom .container .gnb > li .gnb_sub_wrap .container .depth01 > li.sub_title a:before {
   display: none;
 }
-header .header_bottom .container .gnb > li:hover .gnb_sub_wrap {
+header .header_bottom .container .gnb > li.on .gnb_sub_wrap {
   display: block;
   opacity: 1;
 }

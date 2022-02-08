@@ -1,7 +1,50 @@
-const gnb = document.querySelector(".gnb");
-const gnb_sub = gnb.querySelector(".gnb_sub_wrap")
+
+// function hoverAnimation() {
+//     const gnb = document.querySelector(".gnb");
+//     gnb.addEventListener('mouseover', (e)=>{
+//         console.log('on');
+//     }) 
+// }
+// hoverAnimation();
+// const gnbList = document.querySelectorAll(".gnb > li");
+// let arr = new Array();
+
+// gnbList[0].addEventListener("mouseover", (e) => {
+//    const len = gnbList.length;
+//    arr = gnbList
+//    if (e.traget === arr[len] == undefined) {
+            
+//        console.log('clciked');
+//             }
+// });
+
+
+
+
 
 const body = document.getElementsByTagName("body")[0];
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
 
 /* recruits Up & Down */
 const recruitBox = document.querySelector(".notice_box.recruit")
