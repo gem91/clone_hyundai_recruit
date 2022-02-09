@@ -1,51 +1,68 @@
-
-// function hoverAnimation() {
-//     const gnb = document.querySelector(".gnb");
-//     gnb.addEventListener('mouseover', (e)=>{
-//         console.log('on');
-//     }) 
-// }
-// hoverAnimation();
-// const gnbList = document.querySelectorAll(".gnb > li");
-// let arr = new Array();
-
-// gnbList[0].addEventListener("mouseover", (e) => {
-//    const len = gnbList.length;
-//    arr = gnbList
-//    if (e.traget === arr[len] == undefined) {
-            
-//        console.log('clciked');
-//             }
-// });
-
-
-
-
-
-/* number of recruits employee variation */
-const counters = document.querySelectorAll('.value');
-const arr = [...counters]
-const speed = 200;
-
-num = arr.map( counter => {
-    return +counter.getAttribute('data-counter');
+/* main sliders - swiper library */      
+const mainSwiper = new Swiper(('.visual_slides'), {
+    slidesPerView: 1,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    effect: "fade",
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 })
-arr[0].setAttribute( 'data-counter', num[1] + num[2] + num[3] + num[4] );
 
-counters.forEach( counter => {
-    const animate = () => {
-        const value = +counter.getAttribute('data-counter');
-        const data = +counter.innerText;
-        const time = value / speed;
-        if(data < value) {
-            counter.innerText = Math.ceil(data + time);
-            setTimeout(animate, 1);
-        }else{
-            counter.innerText = value;
-        }
+/* jobs sliders - swiper library */                      
+const jobSwiper = new Swiper(('.jobs_container'), {
+    // slidesPerView: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    breakpoints: {
+        // 1020px 보다 클 경우
+        1020: {
+            slidesPerView: 3,
+          },
+          758: {
+            slidesPerView: 2,
+          },
+        280: {
+          slidesPerView: 1,
+        },
+    },
+  navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    
+})
+
+/* scroll effect */
+window.addEventListener('scroll', e => {
+    if ( Math.floor(window.scrollY) > 240 ){
+        /* number of recruits employee variation */
+        const counters = document.querySelectorAll('.value');
+        const arr = [...counters]
+        const speed = 200;
+
+        num = arr.map( counter => {
+            return +counter.getAttribute('data-counter');
+        })
+        arr[0].setAttribute( 'data-counter', num[1] + num[2] + num[3] + num[4] );
+
+        counters.forEach( counter => {
+            const animate = () => {
+                const value = +counter.getAttribute('data-counter');
+                const data = +counter.innerText;
+                const time = value / speed;
+                if(data < value) {
+                    counter.innerText = Math.ceil(data + time);
+                    setTimeout(animate, 30);
+                }else{
+                    counter.innerText = value;
+                }
+            }
+        animate();
+        });
     }
-   animate();
-});
+})
 
 
 /* recruits Up & Down */
@@ -113,50 +130,6 @@ for( let i = 0; i < heart.length; i ++){
         e.target.classList.toggle("on")
     })
 }
-
-
-
-/* jobs slides */
-const jobPrev = document.querySelector(".arrow_left");
-const jobNext = document.querySelector(".arrow_right");
-
-const jobs = document.querySelector(".jobs_area");
-const jobList = jobs.querySelectorAll("li");
-const len = jobList.length; //6 
-let active = 0;
-
-
-jobPrev.addEventListener('click', (e) => {
-    ( active === 0 ) ? active = len-1 :  active -- ;
-       
-
-    
-
-    for( let list of jobList){
-        list.classList.remove("on");
-        jobs.style.left = ( -100 * active + 200  ) + "px"
-        console.log(jobs.style.left = ( -200 * active ) + "px");
-    }
-    jobList[active].classList.add("on");
-});
-
-jobNext.addEventListener('click', (e) => {
-    (active === len-1) ? active = 0 :  active ++;
-    
-    for( let list of jobList)  list.classList.remove("on");
-
-    jobs.style.left = (active * -200) + "px"
-    jobList[active].classList.add("on");
-});
-
-
-
-
-
-
-
-
-
 
 
 

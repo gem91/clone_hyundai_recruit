@@ -7,9 +7,10 @@
     <title>Hyundai Recruit Homage Clone Coding</title>
 
     <link rel="stylesheet" href="assets/css/style.css"></link>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/c5def43c2d.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="assets/js/main.js"></script>
 </head>
 <body>
@@ -96,33 +97,31 @@
         <div class="contents_wrap">
             <!--main-sliders-->
             <section class="visual_cont">
-                <div class="visaul_inner">
-                    <ul class="visual_box">
-                        <li class="">
-                            <div class="half_img"></div>
-                            <div class="half_img"></div>
-                            <div class="all_img">
-                                <img src="./assets/images/vis_small_img01.png" alt="">
-                            </div>
-                        </li>
-                        <li class="">
-                            <div class="half_img"></div>
-                            <div class="half_img"></div>
-                            <div class="all_img">
-                                <img src="./assets/images/vis_small_img01.png" alt="">
-                            </div>
-                        </li>
-                        <li class="">
-                            <div class="half_img"></div>
-                            <div class="half_img"></div>
-                            <div class="all_img">
-                                <img src="./assets/images/vis_small_img01.png" alt="">
-                            </div>
-                        </li>
-                    </ul>
+                <div class="container">
+                    <div class="visual_slides swiper-container">
+                        <ul class="visual_box swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="half_img"></div>
+                                <div class="half_img"></div>
+                                <div class="all_img">
+                                    <img src="./assets/images/vis_small_img01.png" alt="">
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                               111111
+                            </li>
+                            <li class="swiper-slide">
+                               222222
+                            </li>
+                           
+                        </ul>
+                         <!-- If we need navigation buttons -->
+                         <div class="swiper-button-prev"></div>
+                         <div class="swiper-button-next"></div>
+                    </div>
                 </div>
+                
             </section>
-            
             <!--notice-->
             <section class="recruit_cont">
                 <div class="notice_area">
@@ -246,9 +245,9 @@
                 <p>현대자동차 안의 다양한 직무를 소개합니다.</p>
                 <div></div>
                 <article>
-                    <div class="jobs_container">
-                        <ul class="jobs_area">
-                            <li class="on">
+                    <div class="jobs_container swiper-container">
+                        <ul class="jobs_area swiper-wrapper">
+                            <li class="swiper-slide">
                                 <a onclick="return false;" target="_blank" title="재경 소개페이지 새창열기">
                                     <span class="thumb"><img src="./assets/images/jobs_info01.png" alt=""></span>
                                     <p class="text">
@@ -257,7 +256,7 @@
                                     </p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="swiper-slide">
                                 <a nclick="return false;" target="_blank" title="S/W 소개페이지 새창열기">
                                     <span class="thumb"><img src="./assets/images/jobs_info02.jpg" alt=""> </span>
                                     <p class="text">
@@ -266,7 +265,7 @@
                                     </p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="swiper-slide">
                                 <a nclick="return false;" target="_blank" title="차량디자인 소개페이지 새창열기">
                                     <span class="thumb"><img src="./assets/images/jobs_info03.jpg" alt=""></span>
                                     <p class="text">
@@ -275,7 +274,7 @@
                                     </p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="swiper-slide">
                                 <a nclick="return false;" target="_blank" title="연구개발 소개페이지 새창열기">
                                     <span class="thumb"><img src="./assets/images/jobs_info04.jpg" alt=""></span>
                                     <p class="text">
@@ -284,7 +283,7 @@
                                     </p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="swiper-slide">
                                 <a nclick="return false;" target="_blank" title="영업/서비스 소개페이지 새창열기">
                                     <span class="thumb"><img src="./assets/images/jobs_info05.jpg" alt=""></span>
                                     <p class="text">
@@ -293,7 +292,7 @@
                                     </p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="swiper-slide">
                                 <a nclick="return false;" target="_blank" title="매/부품개발 소개페이지 새창열기">
                                     <span class="thumb"><img src="./assets/images/jobs_info03.jpg" alt=""></span>
                                     <p class="text">
@@ -303,11 +302,15 @@
                                 </a>
                             </li>
                         </ul>
+                        
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-                    <div class="arrows">
+                    <!-- <div class="arrows">
                         <button class="arrow_left"><span class="hidden">왼쪽으로</span></button>
                         <button class="arrow_right"><span class="hidden">오른쪽으로</span></button>
-                    </div>
+                    </div> -->
                 </article>
             </section>
         </div>
@@ -333,6 +336,5 @@
             </div>
         </footer>
     </div>
-    
 </body>
 </html>
