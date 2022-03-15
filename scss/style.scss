@@ -27,10 +27,10 @@
             background-color: #ece9e6;
             box-sizing: content-box;
             .visual_slides {  
+                overflow: hidden;
                 width: $pcWidth;
                 position: relative; 
                 .visual_box{
-                    overflow: hidden;
                     width: 100%;
                     height: 580px;
                     margin: 0 auto;
@@ -129,6 +129,11 @@
                             }
                             &.swiper-slide-active .all_img{
                                 display: block;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
                             }
                         }
                     }
@@ -249,7 +254,7 @@
                 ul{
                     position: relative;
                     overflow: hidden;
-                    width: 100%;
+                    width: calc(100% - 110px);
                     height: 27px;
                     li{
                         position: absolute;
@@ -737,12 +742,14 @@
                 position: relative;
                 overflow: hidden;
                 margin-top: 100px;
+                width: 100%;
                 height: 500px;
                 .jobs_area{
+                    width: 100%;
                     transition:all .5s ease-out;
                     li{
                         padding: 0 20px;
-                        // width: 25.4444% !important;
+                        width: 400px;
                         height: 500px;
                         border-right: 1px solid #ddd;
                         background: #fff;
@@ -788,8 +795,8 @@
                                 }
                             }
                         }
-                        &.swiper-slide-active{
-                            width: 45% !important;
+                        &.on{
+                            width: 600px !important;
                             a{
                                 .thumb{
                                     width: 100%;

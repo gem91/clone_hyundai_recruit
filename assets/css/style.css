@@ -375,11 +375,11 @@ header .hambuger {
   box-sizing: content-box;
 }
 .contents_wrap .visual_cont > .container .visual_slides {
+  overflow: hidden;
   width: 1280px;
   position: relative;
 }
 .contents_wrap .visual_cont > .container .visual_slides .visual_box {
-  overflow: hidden;
   width: 100%;
   height: 580px;
   margin: 0 auto;
@@ -463,6 +463,11 @@ header .hambuger {
   }
   .contents_wrap .visual_cont > .container .visual_slides .visual_box li.swiper-slide-active .all_img {
     display: block;
+  }
+  .contents_wrap .visual_cont > .container .visual_slides .visual_box li.swiper-slide-active .all_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 @media (max-width: 757px) {
@@ -603,7 +608,7 @@ header .hambuger {
 .contents_wrap .recruit_cont .notice_area > .container .notice_box.notice ul {
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: calc(100% - 110px);
   height: 27px;
 }
 .contents_wrap .recruit_cont .notice_area > .container .notice_box.notice ul li {
@@ -1070,13 +1075,16 @@ header .hambuger {
   position: relative;
   overflow: hidden;
   margin-top: 100px;
+  width: 100%;
   height: 500px;
 }
 .contents_wrap .jobs_cont > article .jobs_container .jobs_area {
+  width: 100%;
   transition: all 0.5s ease-out;
 }
 .contents_wrap .jobs_cont > article .jobs_container .jobs_area li {
   padding: 0 20px;
+  width: 400px;
   height: 500px;
   border-right: 1px solid #ddd;
   background: #fff;
@@ -1121,10 +1129,10 @@ header .hambuger {
   text-align: left;
   line-height: 1.4;
 }
-.contents_wrap .jobs_cont > article .jobs_container .jobs_area li.swiper-slide-active {
-  width: 45% !important;
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li.on {
+  width: 600px !important;
 }
-.contents_wrap .jobs_cont > article .jobs_container .jobs_area li.swiper-slide-active a .thumb {
+.contents_wrap .jobs_cont > article .jobs_container .jobs_area li.on a .thumb {
   width: 100%;
   height: 300px;
 }
