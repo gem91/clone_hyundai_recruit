@@ -38,13 +38,30 @@ function nextSlide(){
   
 }
 
+function prevSlide(){
+    new Animate(mainSliderBox, {
+        prop: "left",
+        value: `0`,
+        duration: 800,
+        callback: () => {
+            mainSliderBox.style.left = "-100%";
+            mainSliderBox.prepend(mainSliderBox.lastElementChild);
+            enableClick = true;
+        }
+    })
+}
+
 const jobSliderWrap = document.querySelector(".jobs_container");
 const jobBox = jobSliderWrap.querySelector(".jobs_area");
 const jobLists = jobBox.querySelectorAll("li");
 const jobPrev = jobSliderWrap.querySelector(".swiper-button-prev");
 const jobNext = jobSliderWrap.querySelector(".swiper-button-next");
 
-jobBox.style.left = 0;
+jobBox.style.left = -150+'px';
+
+window.addEventListener('load', () => {
+    jobBox.prepend(jobBox.lastElementChild)
+})
 
 jobNext.addEventListener('click', e => {
     e.preventDefault();
@@ -54,46 +71,48 @@ jobNext.addEventListener('click', e => {
     }
 })
 
-// jobNext.addEventListener('click', e => {
-//     e.preventDefault();
-//     if(enableClick){
-//         enableClick = false;
-//         jobPrevSlide()
-//     }
-// })
+jobPrev.addEventListener('click', e => {
+    e.preventDefault();
+    if(enableClick){
+        enableClick = false;
+        jobPrevSlide()
+    }
+})
 
 function jobNextSlide(){
     new Animate(jobBox, {
         prop: "left",
-        value: -700,
-        duration: 500,
+        value: -350,
+        duration: 300,
         callback: () => {
-            jobBox.style.left = 0;
-            jobBox.append(jobBox.firstElementChild);
-            jobBox.lastElementChild.classList.remove("on");
-            jobBox.firstElementChild.classList.add("on");
-         
-               
-           
+            setTimeout(() =>{
+                jobBox.append(jobBox.firstElementChild);
+                jobBox.firstElementChild.classList.remove("on");
+                jobBox.children[1].classList.add("on")
+                jobBox.style.left = -150 + "px";
+            }, 100)
             enableClick = true;
         }
     })
   
 }
 
-
-// function jobPrevSlide(){
-//     new Animate(jobBox, {
-//         prop: "left",
-//         value: 0,
-//         duration: 800,
-//         callback: () => {
-//             mainSliderBox.style.left = -600;
-//             mainSliderBox.prepend(mainSliderBox.lastElementChild);
-//             enableClick = true;
-//         }
-//     })
-// }
+function jobPrevSlide(){
+    new Animate(jobBox, {
+        prop: "left",
+        value: 0,
+        duration: 300,
+        callback: () => {
+            setTimeout(() =>{
+                jobBox.children[1].classList.remove("on")
+                jobBox.prepend(jobBox.lastElementChild);
+                jobBox.children[1].classList.add("on");
+                jobBox.style.left = -150 + "px";
+            }, 100)
+            enableClick = true;
+        }
+    })
+}
 
 
 
