@@ -1417,6 +1417,37 @@ header .hambuger {
   .contents_wrap .jobs_cont > article .jobs_container .jobs_area li a .text span {
     font-size: 0.8rem;
   }
+  .contents_wrap .jobs_cont > article .jobs_container .btn_prev {
+    left: 17px;
+    transform: translateY(-180%);
+  }
+  .contents_wrap .jobs_cont > article .jobs_container .btn_prev:before {
+    left: 10px;
+    height: 20px;
+    width: 20px;
+  }
+  .contents_wrap .jobs_cont > article .jobs_container .btn_prev:hover:before {
+    left: 10px;
+    height: 20px;
+    width: 20px;
+  }
+  .contents_wrap .jobs_cont > article .jobs_container .btn_next {
+    right: 17px;
+    padding: 30px 20px;
+    width: 40px;
+    height: 60px;
+    transform: translateY(-180%);
+  }
+  .contents_wrap .jobs_cont > article .jobs_container .btn_next:before {
+    right: 10px;
+    height: 20px;
+    width: 20px;
+  }
+  .contents_wrap .jobs_cont > article .jobs_container .btn_next:hover:before {
+    right: 10px;
+    height: 20px;
+    width: 20px;
+  }
 }
 
 footer {
