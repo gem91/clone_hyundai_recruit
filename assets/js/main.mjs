@@ -2,12 +2,14 @@ import Animate from "./animation.mjs";
 
 const mainSliderWrap = document.querySelector(".visual_cont");
 const mainSliderBox = mainSliderWrap.querySelector(".visual_box");
-const mainPrev = mainSliderWrap.querySelector(".swiper-button-prev");
-const mainNext = mainSliderWrap.querySelector(".swiper-button-next");
+const mainPrev = mainSliderWrap.querySelector(".btn_prev");
+const mainNext = mainSliderWrap.querySelector(".btn_next");
 let enableClick = true;
 
 mainSliderBox.style.left = "-100%";
-
+window.addEventListener('load', () => {
+    mainSliderBox.prepend(mainSliderBox.lastElementChild)
+})
 mainNext.addEventListener('click', e => {
     e.preventDefault();
     if(enableClick){
@@ -53,11 +55,15 @@ function prevSlide(){
 
 const jobSliderWrap = document.querySelector(".jobs_container");
 const jobBox = jobSliderWrap.querySelector(".jobs_area");
-const jobLists = jobBox.querySelectorAll("li");
-const jobPrev = jobSliderWrap.querySelector(".swiper-button-prev");
-const jobNext = jobSliderWrap.querySelector(".swiper-button-next");
+const jobPrev = jobSliderWrap.querySelector(".btn_prev");
+const jobNext = jobSliderWrap.querySelector(".btn_next");
 
-jobBox.style.left = -150+'px';
+let innerWidth = window.innerWidth;
+if(innerWidth < "758"){
+    jobBox.style.left = -100 + "%";
+}else {
+    jobBox.style.left = -150+'px';
+}
 
 window.addEventListener('load', () => {
     jobBox.prepend(jobBox.lastElementChild)
@@ -75,43 +81,74 @@ jobPrev.addEventListener('click', e => {
     e.preventDefault();
     if(enableClick){
         enableClick = false;
-        jobPrevSlide()
+        jobPrevSlide();
     }
 })
 
 function jobNextSlide(){
-    new Animate(jobBox, {
-        prop: "left",
-        value: -350,
-        duration: 300,
-        callback: () => {
-            setTimeout(() =>{
+    if(innerWidth < "758"){
+        new Animate(jobBox, {
+            prop: "left",
+            value: -200 + "%",
+            duration: 500,
+            callback: () => {
                 jobBox.append(jobBox.firstElementChild);
                 jobBox.firstElementChild.classList.remove("on");
                 jobBox.children[1].classList.add("on")
-                jobBox.style.left = -150 + "px";
-            }, 100)
-            enableClick = true;
-        }
-    })
-  
+                jobBox.style.left = -100 + "%";
+                enableClick = true;
+            }
+        })
+    }else{
+        new Animate(jobBox, {
+            prop: "left",
+            value: -350,
+            duration: 300,
+            callback: () => {
+                setTimeout(() =>{
+                    jobBox.append(jobBox.firstElementChild);
+                    jobBox.firstElementChild.classList.remove("on");
+                    jobBox.children[1].classList.add("on")
+                    jobBox.style.left = -150 + "px";
+                }, 100)
+                enableClick = true;
+            }
+        })
+    }
 }
 
 function jobPrevSlide(){
-    new Animate(jobBox, {
-        prop: "left",
-        value: 0,
-        duration: 300,
-        callback: () => {
-            setTimeout(() =>{
+    if(innerWidth < "758"){
+        new Animate(jobBox, {
+            prop: "left",
+            value: 0 + "%",
+            duration: 500,
+            callback: () => {
                 jobBox.children[1].classList.remove("on")
                 jobBox.prepend(jobBox.lastElementChild);
+                // jobBox.style.opacity = 1;
+                jobBox.style.left = -100 + "%";
                 jobBox.children[1].classList.add("on");
-                jobBox.style.left = -150 + "px";
-            }, 100)
-            enableClick = true;
-        }
-    })
+                enableClick = true;
+            }
+        })
+    }else {
+        new Animate(jobBox, {
+            prop: "left",
+            value: 0,
+            duration: 300,
+            callback: () => {
+                setTimeout(() =>{
+                    jobBox.children[1].classList.remove("on")
+                    jobBox.prepend(jobBox.lastElementChild);
+                    jobBox.children[1].classList.add("on");
+                    jobBox.style.left = -150 + "px";
+                }, 100)
+                enableClick = true;
+            }
+        })
+    }
+   
 }
 
 
@@ -166,7 +203,7 @@ recruitBox.addEventListener('click', (e) => {
     }
 })
 
-const reHeight = function(){
+function reHeight(){
     let innerWidth = window.innerWidth;
     if(innerWidth < "758"){
         recruits.style.height = "1380px";
