@@ -1425,11 +1425,14 @@ header .hambuger {
     left: 10px;
     height: 20px;
     width: 20px;
+    border-color: #fff;
+    text-shadow: 1px 1px 2px black;
   }
   .contents_wrap .jobs_cont > article .jobs_container .btn_prev:hover:before {
     left: 10px;
     height: 20px;
     width: 20px;
+    border-color: #fff;
   }
   .contents_wrap .jobs_cont > article .jobs_container .btn_next {
     right: 17px;
@@ -1442,11 +1445,13 @@ header .hambuger {
     right: 10px;
     height: 20px;
     width: 20px;
+    border-color: #fff;
   }
   .contents_wrap .jobs_cont > article .jobs_container .btn_next:hover:before {
     right: 10px;
     height: 20px;
     width: 20px;
+    border-color: #fff;
   }
 }
 

@@ -982,9 +982,12 @@
                         transform: translateY(-180%);
                         &:before{
                             left:10px; height:20px; width:20px;
+                            border-color:#fff;
+                            text-shadow: 1px 1px 2px black;
                         }
                         &:hover:before{
                             left:10px;height:20px; width:20px;
+                            border-color:#fff;
                         }
                     }
                     .btn_next{
@@ -993,9 +996,11 @@
                         transform: translateY(-180%);
                         &:before{
                             right:10px;height:20px; width:20px;
+                            border-color:#fff;
                         }
                         &:hover:before{
                             right:10px;height:20px; width:20px;
+                            border-color:#fff;
                         }
                     }
                 }
