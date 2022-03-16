@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/c5def43c2d.js" crossorigin="anonymous"></script>
     <script defer type="module" src="assets/js/animation.mjs"></script>
-    <script defer type="module" src="assets/js/main.mjs"></script>
+    <script defer type="module" src="assets/js/classSlider.mjs"></script>
 </head>
 <body>
     <div class="wrap">
@@ -100,7 +100,7 @@
             <section class="visual_cont">
                 <div class="container">
                     <div class="visual_slides">
-                        <ul class="visual_box">
+                        <ul class="visual_box" style="left: -100%">
                             <li class="">
                                 <div class="half_img"></div>
                                 <div class="half_img"></div>
@@ -120,8 +120,8 @@
                             </li>
                         </ul>
                          <!-- If we need navigation buttons -->
-                         <div class="btn_prev"></div>
-                         <div class="btn_next"></div>
+                         <button class="btn_prev"></button>
+                         <button class="btn_next"></button>
                     </div>
                 </div>
                 
@@ -249,8 +249,8 @@
                 <p>현대자동차 안의 다양한 직무를 소개합니다.</p>
                 <div></div>
                 <article>
-                    <div class="jobs_container swiper-container">
-                        <ul class="jobs_area swiper-wrapper">
+                    <div class="jobs_container">
+                        <ul class="jobs_area" style="left: -150px">
                             <li class=" on">
                                 <a onclick="return false;" href="#" target="_blank" title="재경 소개페이지 새창열기">
                                     <span class="thumb"><img src="./assets/images/jobs_info01.png" alt=""></span>
@@ -308,8 +308,8 @@
                         </ul>
                         
                         <!-- If we need navigation buttons -->
-                        <div class="btn_prev"></div>
-                        <div class="btn_next"></div>
+                        <button class="btn_prev"></button>
+                        <button class="btn_next"></button>
                     </div>
                 </article>
             </section>
