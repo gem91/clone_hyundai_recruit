@@ -193,11 +193,11 @@ header{
             .container{
                 .logo{
                     margin-left: 15px;
-                    min-width: 100px;
+                    min-width: 70px;
                     height: 45px;
                     a{
                         background: url(/assets/images/icons/m_logo.png) no-repeat center center;
-                        transform: scale(.8);
+                        transform: scale(.6);
                     }
                 }
                 .gnb{
@@ -207,20 +207,20 @@ header{
         }
         .hambuger{
             position: absolute;
-            top: 5px;
+            top: 15px;
             right: 20px;
             display: block;
             width:40px; height:40px;
             text-indent: -9999px;
             &:before{
                 content:''; 
-                position:absolute; top:14px; left:0; 
+                position:absolute; top:8px; left:5px; 
                 display:block; 
-                height:4px; width:35px; 
+                height:3px; width:30px; 
                 border-radius:4px;
-                box-shadow:0 9px #333, 0 19px #333;
-                -webkit-box-shadow:0 9px #333, 0 19px #333;
-                -moz-box-shadow:0 9px #333, 0 19px #333;
+                box-shadow:0 8px #333, 0 17px #333;
+                -webkit-box-shadow:0 8px #333, 0 17px #333;
+                -moz-box-shadow:0 8px #333, 0 17px #333;
                 background:#333; 
             }
         }
