@@ -1169,20 +1169,27 @@ header .hambuger {
   }
   .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list.other a .title {
     margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list.other a .desc {
+    font-size: 0.9rem;
   }
   .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list a.recruit_txt {
     padding: 30px 25px 80px;
   }
   .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list a.recruit_txt .tag {
     padding: 5px 15px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list a.recruit_txt .title {
     margin-top: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list a.recruit_txt .date {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+  .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list a.recruit_txt .date em {
+    font-size: 0.85rem;
   }
   .contents_wrap .recruit_cont .recruit_content .recruit_ing .ing_list .small {
     background: #fff;

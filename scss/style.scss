@@ -762,21 +762,23 @@
                                 height: 100%;
                                 padding: 50px 25px 80px;
                                 background: rgba(255, 255, 255, 0.6);
-                                .title{margin-top: 0;}
+                                .title{margin-top: 0;font-size: 1.1rem;}
+                                .desc{font-size: 0.9rem;}
                             } 
                         }
                         a.recruit_txt{
                             padding: 30px 25px 80px;
                             .tag{
                                 padding: 5px 15px;
-                                font-size: .9rem;
+                                font-size: .85rem;
                             }
                             .title{
                                 margin-top: 0;
-                                font-size: 1.2rem;
+                                font-size: 1.1rem;
                             }
                             .date{
-                                font-size: 1rem;
+                                font-size: .9rem;
+                                em{font-size: .85rem;}
                             }
                         }
                         .small{
